@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import {ProviderPosts} from './Api-context/index.js'
+import './App.scss';
+import {  Route, BrowserRouter as Router, Switch  } from 'react-router-dom';
+import Home from './conmponents/Home/index.js';
+import Comments from './conmponents/Comments/index.js';
+import Header from './conmponents/Header/index.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (     
+    <Router>      
+      <ProviderPosts>
+        <Header/>
+      <Switch>        
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/c" exact >
+          <Comments />
+        </Route>
+      </Switch>
+      </ProviderPosts>    
+  </Router>
+      
+      
+           
+    
   );
 }
 
