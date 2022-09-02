@@ -19,11 +19,7 @@ function App() {
         </Route>
       </Switch>
       </ProviderPosts>    
-  </Router>
-      
-      
-           
-    
+  </Router>           
   );
 }
 
